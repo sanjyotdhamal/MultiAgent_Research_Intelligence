@@ -19,6 +19,27 @@
 
 ---
 
+## 🖥️ Frontend Dashboard Preview
+
+<div align="center">
+
+![MARIP Dashboard](assets/dashboard_preview.png)
+
+> **Live Dashboard** — Real-time agent monitoring, research activity feed, quality score analytics, and collaborative multi-agent status panel powered by Streamlit.
+
+| Feature | Details |
+|---|---|
+| 📊 Reports Generated | Tracked live on the dashboard |
+| ⚡ Agent Executions | Real-time execution counter |
+| ✅ Successful Tasks | Pipeline success metrics |
+| ⭐ Avg Quality Score | Auto-computed reviewer score |
+| 🤖 Agent Status Panel | Live idle/active state per agent |
+| 📈 Quality Score Trend | Historical score chart |
+
+</div>
+
+---
+
 ## 📖 Executive Summary
 
 The **Multi-Agent Research Intelligence Platform (MARIP)** is an enterprise-grade agentic AI system engineered to automate exhaustive, hallucination-resistant academic and technological research. 
