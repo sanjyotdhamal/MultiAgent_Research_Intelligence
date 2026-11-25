@@ -288,7 +288,7 @@ OK (26/26 tests passed) 🎉
 
 ## 👥 Contributors & Academic Credits
 
-* **Author:** Sai & Capstone Team
+* **Author:** Capstone Team
 * **Degree:** Bachelor of Technology in Computer Science & Engineering (B.Tech CSE)
 * **Domain:** Agentic AI · Multi-Agent Systems · Natural Language Processing
 * **Platform Version:** `v2.0.0`
