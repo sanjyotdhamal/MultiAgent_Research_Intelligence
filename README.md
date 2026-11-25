@@ -286,32 +286,6 @@ OK (26/26 tests passed) 🎉
 
 ---
 
-## 🎓 50-Mark Jury Evaluation & Viva Defense
-
-Below are the most critical technical defense questions expected during project review:
-
-### Q1: Why is a Multi-Agent system superior to a single ChatGPT/Gemini prompt?
-> **Answer:** Single prompts attempt to plan, retrieve, write, and verify simultaneously within a single context window, leading to severe hallucination drift and superficial reasoning. MARIP enforces **Separation of Concerns (SoC)**:
-> 1. The **Planner** ensures logical depth before writing starts.
-> 2. The **Researcher** grounds the system in external truth via web search.
-> 3. The **Analyst** and **Conflict Resolver** reconcile contradictions.
-> 4. The **Writer** drafts content based strictly on verified findings.
-> 5. The **Fact Checker** audits factual claims.
-> 6. The **Reviewer** acts as an objective adversary enforcing academic rigor through feedback loops.
-
-### Q2: How is inter-agent communication managed?
-> **Answer:** MARIP implements a custom, thread-safe **`CommunicationBus`** (`core/communication.py`) utilizing reentrant locking (`threading.RLock`). Agents post structured messages with typed payloads (`task_assign`, `task_result`, `feedback`, `error`, `approval_request`), allowing the UI to render real-time event timelines and state synchronizations without race conditions.
-
-### Q3: How does the Iterative Self-Improvement loop operate?
-> **Answer:** In `core/orchestrator.py`, the **Reviewer Agent** scores the draft across 5 weighted dimensions (Accuracy, Completeness, Clarity, Structure, Depth). If the score is $< 75/100$, the Reviewer generates explicit `improvement_instructions`. The orchestrator executes a feedback cycle where the **Writer** revises the weak sections, the **Fact Checker** re-verifies claims, and the **Reviewer** re-scores, continuing until the quality threshold is met or max iterations (3) are reached.
-
-### Q4: How is high availability and low latency guaranteed?
-> **Answer:** MARIP features dual-engine routing:
-> - Groq inference delivers **~500 tokens/sec** for rapid iteration.
-> - Google Gemini serves as a resilient reasoning engine with automated exponential backoff (2s, 4s, 8s) and cross-provider failover. If an API key or network glitch occurs, the system switches providers automatically without user disruption.
-
----
-
 ## 👥 Contributors & Academic Credits
 
 * **Author:** Sai & Capstone Team
